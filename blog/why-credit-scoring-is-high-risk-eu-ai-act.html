@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Why Your Credit-Scoring Model Is "High-Risk" Under the EU AI Act — Nidhi Kalyani</title>
+<meta name="description" content="Under the EU AI Act, AI used to score creditworthiness is high-risk. Here's what that means for fintechs, how it collides with GDPR Article 22, and a practical checklist to get ready before August 2026." />
+
+<!-- Open Graph (controls the preview card when shared on LinkedIn etc.) -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Why Your Credit-Scoring Model Is 'High-Risk' Under the EU AI Act" />
+<meta property="og:description" content="What the EU AI Act's high-risk classification means for fintechs, how it collides with GDPR Article 22, and a practical readiness checklist." />
+<meta property="og:url" content="https://nidhikalyani46287-lgtm.github.io/Portfolio/blog/why-credit-scoring-is-high-risk-eu-ai-act.html" />
+<meta name="author" content="Nidhi Kalyani" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../blog.css" />
+</head>
+
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="../index.html">Nidhi Kalyani</a>
+    <div class="links">
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#ai-governance">AI Governance</a>
+      <a href="index.html" class="active">Writing</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <a class="back-link" href="index.html">← All writing</a>
+
+  <article>
+    <header class="article-header">
+      <div class="eyebrow">EU AI Act · Fintech</div>
+      <h1 class="serif">Why Your Credit-Scoring Model Is "High-Risk" Under the EU AI Act</h1>
+      <div class="article-meta"><strong>Nidhi Kalyani</strong> · Privacy &amp; AI Governance · 6 min read</div>
+    </header>
+
+    <div class="prose">
+
+      <div class="tldr">
+        <div class="tldr-label">The short version</div>
+        <ul>
+          <li>If your model decides who gets credit, the EU AI Act almost certainly classifies it as <strong>high-risk</strong> (Annex III).</li>
+          <li>That triggers a full obligation set — risk management, data governance, human oversight, logging, conformity assessment.</li>
+          <li>It also collides with <strong>GDPR Article 22</strong> on automated decision-making — two regimes, one model.</li>
+          <li>Most high-risk obligations apply from <strong>August 2026</strong>. The work to be ready starts now.</li>
+        </ul>
+      </div>
+
+      <p class="lede">A fintech can hold billions in deposits, pass every financial audit, and still be sitting on a single unmanaged piece of AI risk: the model that decides who gets a loan.</p>
+
+      <p>For most of the last decade, credit-scoring models lived quietly inside risk and data-science teams. The EU AI Act drags them into the regulatory light — and a lot of fintechs haven't yet realised that the model they think of as "just analytics" is, in legal terms, a <strong>high-risk AI system</strong>.</p>
+
+      <p>Here's what that classification means, why it overlaps with privacy law you already know, and what to actually do about it.</p>
+
+      <h2>The Act regulates use cases, not technology</h2>
+
+      <p>The EU AI Act sorts AI systems into four risk tiers based on <em>what they're used for</em> — not how clever the model is. A simple logistic regression and a large neural network are treated identically if they're put to the same use.</p>
+
+      <div class="diagram">        ▲   UNACCEPTABLE   →  banned (e.g. social scoring)
+       ╱ ╲
+      ╱   ╲
+     ╱ HIGH ╲   →  allowed, heavily regulated   ← CREDIT SCORING IS HERE
+    ╱  RISK   ╲
+   ╱───────────╲
+  ╱  LIMITED     ╲ →  transparency only (e.g. chatbots)
+ ╱────────────────╲
+│   MINIMAL RISK    │ →  no obligations (most AI)
+└──────────────────┘</div>
+
+      <p><strong>Annex III</strong> of the Act lists the high-risk use cases. One of them is explicit: AI systems intended to <strong>evaluate the creditworthiness of natural persons or establish their credit score</strong>. (Fraud-detection systems are carved out — but that's a narrow exception, not a loophole for scoring.)</p>
+
+      <div class="callout">
+        <div class="callout-label">Key insight</div>
+        <p>"High-risk" is not a verdict that your model is bad. It's a statement that the <em>stakes for the individual</em> are high — being wrongly denied credit affects someone's housing, business, or livelihood. The obligations exist to make that decision contestable and fair.</p>
+      </div>
+
+      <h2>What high-risk actually requires</h2>
+
+      <p>Classification is the easy part. The obligations are where the work lives. For a high-risk system you need, at minimum:</p>
+
+      <ol>
+        <li><strong>A risk management system</strong> that runs across the whole lifecycle, not a one-time sign-off.</li>
+        <li><strong>Data governance</strong> — training and testing data that is relevant, representative, and checked for bias.</li>
+        <li><strong>Technical documentation and logging</strong> so decisions can be reconstructed and audited.</li>
+        <li><strong>Transparency</strong> and clear instructions for the people operating the system.</li>
+        <li><strong>Human oversight</strong> — a person who can understand, intervene in, and override the output.</li>
+        <li><strong>Accuracy, robustness, and cybersecurity</strong> appropriate to the use.</li>
+        <li><strong>Conformity assessment</strong> and registration before the system goes to market.</li>
+      </ol>
+
+      <h2>The part fintechs miss: it's two regimes, not one</h2>
+
+      <p>A credit-scoring model doesn't just sit under the AI Act. The moment it makes a decision about a person, <strong>GDPR Article 22</strong> wakes up — the right not to be subject to a solely automated decision that produces legal or similarly significant effects.</p>
+
+      <p>This isn't theoretical. In the 2023 <em>SCHUFA</em> ruling, the Court of Justice of the EU held that generating a credit score can itself be automated decision-making under Article 22 — even when a human at the bank formally makes the final call. The two regimes layer on top of each other:</p>
+
+      <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Question</th><th>EU AI Act asks</th><th>GDPR asks</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Focus</td><td><strong>The system</strong> and its risk to rights</td><td><strong>The personal data</strong> and the individual</td></tr>
+          <tr><td>Core duty</td><td>Risk mgmt, oversight, conformity</td><td>Lawful basis, transparency, Art. 22 safeguards</td></tr>
+          <tr><td>The individual gets</td><td>A system that is documented and overseen</td><td>Meaningful information + a route to human review</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p class="pullquote">The model your data team calls "the score" is, to a regulator, both a high-risk AI system and an automated decision about a human being.</p>
+
+      <h2>Provider or deployer? Know which hat you wear</h2>
+
+      <p>One distinction decides how much of the obligation list lands on you. If your fintech <strong>builds</strong> the scoring model, you're a <strong>provider</strong> and carry the heaviest duties. If you <strong>buy</strong> it from a vendor and put it to use, you're a <strong>deployer</strong> — lighter, but far from nothing: you still owe human oversight, monitoring, and using the system within its intended purpose. Many fintechs are both, for different models. Mapping that per system is step one.</p>
+
+      <h2>A practical readiness checklist</h2>
+
+      <p>You don't need to boil the ocean before August 2026. You need to start the right way:</p>
+
+      <ul>
+        <li><strong>Inventory first.</strong> Build an AI use-case registry and flag everything that touches credit, scoring, or eligibility.</li>
+        <li><strong>Classify each entry</strong> against the Act's tiers. Be honest about Annex III.</li>
+        <li><strong>Run an impact assessment</strong> on the high-risk ones — and reuse your DPIA muscle to do it.</li>
+        <li><strong>Check the Article 22 overlap:</strong> lawful basis, the information you give applicants, and a real human-review route.</li>
+        <li><strong>Fix the human oversight gap</strong> — most "human in the loop" today is a rubber stamp, not genuine oversight.</li>
+        <li><strong>Document as you go.</strong> If it isn't written down, to an auditor it didn't happen.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-label">If you take one thing</div>
+        <p>Don't treat the EU AI Act as a new, separate compliance project. Treat your credit model as one system that two regimes look at from different angles — and govern it once, well.</p>
+      </div>
+
+      <div class="post-cta">
+        <p>I'm a privacy professional moving into AI governance — writing about where the EU AI Act, GDPR, and the standards (ISO/IEC 42001, NIST AI RMF) actually meet in practice. If you're working through the same questions, <a href="../index.html#contact">let's talk</a>.</p>
+      </div>
+
+    </div>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+    <span class="serif">Nidhi Kalyani</span>
+    <span><a href="index.html">More writing</a> · Berlin</span>
+  </div>
+</footer>
+
+</body>
+</html>
