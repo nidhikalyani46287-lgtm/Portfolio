@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root{
+    --dark:#14181d;
+    --cream:#f2efe8;
+    --ink:#16181c;
+    --accent:#e8533a;
+    --dark-text:#efeae0;
+    --dark-muted:#9aa0a6;
+    --light-muted:#5c5f63;
+    --panel:#1b2026;
+    --panel-head:#222931;
+  }
+
+  @page{size:1000px 1250px;margin:0;}
+
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+  body{font-family:'Hanken Grotesk',sans-serif;}
+
+  .slide{
+    width:1000px;height:1250px;
+    padding:84px 80px 70px;
+    position:relative;
+    display:flex;flex-direction:column;
+    page-break-after:always;
+    overflow:hidden;
+  }
+  .slide:last-child{page-break-after:auto;}
+
+  .dark{background:var(--dark);color:var(--dark-text);}
+  .light{background:var(--cream);color:var(--ink);}
+
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:18px;letter-spacing:6px;font-weight:500;
+    text-transform:uppercase;color:var(--accent);
+    margin-bottom:30px;
+  }
+
+  .tag{display:inline-flex;align-items:center;gap:14px;margin-bottom:34px;}
+  .tag .num{
+    background:var(--accent);color:#fff;font-family:'JetBrains Mono',monospace;
+    font-weight:500;font-size:22px;padding:6px 16px;border-radius:3px;letter-spacing:1px;
+  }
+  .tag .lbl{
+    font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:6px;
+    text-transform:uppercase;color:var(--light-muted);font-weight:500;
+  }
+
+  h1{font-weight:800;font-size:88px;line-height:0.98;letter-spacing:-2px;}
+  h2{font-weight:800;font-size:72px;line-height:1.0;letter-spacing:-1.5px;}
+  .accent{color:var(--accent);}
+  .muted-word{color:var(--dark-muted);}
+
+  .body{font-size:30px;line-height:1.42;font-weight:400;margin-top:38px;max-width:790px;}
+  .dark .body{color:#d4d0c7;}
+  .light .body{color:#34373b;}
+  .body strong{font-weight:700;}
+  .light .body strong{color:var(--ink);}
+  .dark .body strong{color:#fff;}
+
+  .body.secondary{font-size:27px;margin-top:26px;}
+  .dark .body.secondary{color:var(--dark-muted);}
+  .light .body.secondary{color:#7a7d81;}
+
+  .spacer{flex:1;}
+
+  .footer{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    font-family:'JetBrains Mono',monospace;font-size:18px;
+  }
+  .footer .name{font-weight:500;}
+  .dark .footer .name{color:#cfcabf;}
+  .light .footer .name{color:var(--ink);}
+  .dark .footer .name .role{color:var(--dark-muted);}
+  .footer .pg{color:#8a8d91;}
+  .footer .swipe{color:var(--accent);}
+
+  .panel{margin-top:40px;border-radius:12px;overflow:hidden;background:var(--panel);font-family:'JetBrains Mono',monospace;}
+  .panel-head{background:var(--panel-head);padding:16px 24px;display:flex;align-items:center;gap:18px;}
+  .dots{display:flex;gap:8px;}
+  .dots span{width:13px;height:13px;border-radius:50%;background:#3a424b;}
+  .panel-title{color:#7e8893;font-size:18px;letter-spacing:1px;}
+  .panel-body{padding:28px 26px;}
+  .row{display:flex;justify-content:space-between;align-items:center;font-size:22px;color:#cfd4d9;padding:7px 0;}
+  .row .ok{color:var(--accent);}
+  .row .dim{color:#6f7882;}
+  .note{color:var(--accent);font-size:20px;margin-top:14px;line-height:1.4;}
+  .note.dimnote{color:#6f7882;}
+
+  .big-grade{font-weight:800;font-size:120px;line-height:1;color:var(--accent);letter-spacing:-3px;}
+
+  .cta-btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:30px;padding:24px 38px;border-radius:8px;margin-top:44px;}
+  .creditline{font-family:'JetBrains Mono',monospace;font-size:16px;color:#6a7078;line-height:1.5;}
+</style>
+</head>
+<body>
+
+<!-- 01 COVER -->
+<section class="slide dark">
+  <div class="eyebrow">PRIVACY&nbsp;WORK&nbsp;FOR&nbsp;LAWYERS&nbsp;·&nbsp;BERLIN</div>
+  <h1>I can find a<br>GDPR breach on<br>your website in<br><span class="accent">60 seconds.</span></h1>
+  <div class="body">No paid tools. No budget. Just the inspector your browser already ships with — the same one a regulator or a competitor would use.</div>
+  <div class="spacer"></div>
+  <div class="footer">
+    <span class="name">Nidhi Kalyani <span class="role">— data protection &amp; AI governance</span></span>
+    <span class="swipe">Swipe →&nbsp;01</span>
+  </div>
+</section>
+
+<!-- 02 CONSENT -->
+<section class="slide light">
+  <div class="tag"><span class="num">01</span><span class="lbl">Consent</span></div>
+  <h2>Don't touch the<br>cookie banner.</h2>
+  <div class="body">Open DevTools → <strong>Network</strong> → reload. Everything that loads <strong>before</strong> you click "Accept" loaded <strong>without consent</strong>. A tracker sitting in that list is a §25 TTDSG violation — full stop.</div>
+  <div class="panel">
+    <div class="panel-head"><span class="dots"><span></span><span></span><span></span></span><span class="panel-title">Network — loaded before consent</span></div>
+    <div class="panel-body">
+      <div class="row"><span>www.google-analytics.com</span><span class="ok">200 · fired</span></div>
+      <div class="row"><span>connect.facebook.net</span><span class="ok">200 · fired</span></div>
+      <div class="row"><span>consentbanner.js</span><span class="dim">still open</span></div>
+      <div class="note">↳ tracking started before the visitor agreed to anything.</div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="footer"><span class="name">Nidhi Kalyani</span><span class="pg">02</span></div>
+</section>
+
+<!-- 03 TRANSFER -->
+<section class="slide light">
+  <div class="tag"><span class="num">02</span><span class="lbl">Transfer</span></div>
+  <h2>A German server<br>can still be a<br>US problem.</h2>
+  <div class="body">Add the <strong>Remote Address</strong> column, drop the IP into <strong>ip-api.com</strong>. US-owned host? That's an Art. 44 transfer — even if the box sits in Frankfurt. The CLOUD Act doesn't care about geography.</div>
+  <div class="panel">
+    <div class="panel-head"><span class="dots"><span></span><span></span><span></span></span><span class="panel-title">ip-api.com — lookup</span></div>
+    <div class="panel-body">
+      <div class="row"><span>35.241.3.184 → Google LLC</span><span class="ok">US</span></div>
+      <div class="row"><span>city → Kansas City</span><span class="dim">—</span></div>
+      <div class="note dimnote">Art. 44 GDPR · third-country transfer</div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="footer"><span class="name">Nidhi Kalyani</span><span class="pg">03</span></div>
+</section>
+
+<!-- 04 FONT -->
+<section class="slide light">
+  <div class="tag"><span class="num">03</span><span class="lbl">€100 each</span></div>
+  <h2>The font that<br>costs €100<br>per visitor.</h2>
+  <div class="body">Filter Network by <strong>"font"</strong>. See <strong>fonts.gstatic.com</strong>? Every visitor's IP is shipped to Google on load. Munich court, 2022: €100 in damages. The fix is one line of code — host the font locally.</div>
+  <div class="panel">
+    <div class="panel-head"><span class="dots"><span></span><span></span><span></span></span><span class="panel-title">Network — filter: font</span></div>
+    <div class="panel-body">
+      <div class="row"><span>fonts.googleapis.com/css</span><span class="ok">200 · US</span></div>
+      <div class="row"><span>fonts.gstatic.com/…woff2</span><span class="ok">200 · US</span></div>
+      <div class="note dimnote">LG München I · 3 O 17493/20 · 20.01.2022</div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="footer"><span class="name">Nidhi Kalyani</span><span class="pg">04</span></div>
+</section>
+
+<!-- 05 ENCRYPTION -->
+<section class="slide light">
+  <div class="tag"><span class="num">04</span><span class="lbl">Encryption</span></div>
+  <h2>You don't need<br>cryptography.<br>You need one<br>grade.</h2>
+  <div class="body">Paste the domain into <strong>ssllabs.com</strong>. Read the letter at the top. Below an A, flag it to IT. That's the entire check — skip the 30 pages of TLS theory.</div>
+  <div class="panel">
+    <div class="panel-head"><span class="dots"><span></span><span></span><span></span></span><span class="panel-title">SSL Labs — server test</span></div>
+    <div class="panel-body">
+      <div class="row"><span>Overall rating</span><span class="ok" style="font-size:30px;font-weight:500;">B</span></div>
+      <div class="row"><span>supports TLS 1.0 / 1.1</span><span class="ok">capped</span></div>
+      <div class="note">↳ below A → escalate to the technical contact.</div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="footer"><span class="name">Nidhi Kalyani</span><span class="pg">05</span></div>
+</section>
+
+<!-- 06 WHY THIS MATTERS -->
+<section class="slide dark">
+  <div class="eyebrow">WHY&nbsp;THIS&nbsp;MATTERS</div>
+  <h1>Most privacy people<br>can <span class="muted-word">cite</span> Schrems II.</h1>
+  <div style="height:40px"></div>
+  <h1 class="accent">Few can point to<br>the IP address.</h1>
+  <div class="body">The gap in this field isn't legal knowledge. It's lawyers who can open the inspector, <strong>show</strong> the violation, then write the clause that fixes it. That overlap is rare — and it's where I work.</div>
+  <div class="spacer"></div>
+  <div class="footer"><span class="name">Nidhi Kalyani</span><span class="pg">06</span></div>
+</section>
+
+<!-- 07 TRY IT YOURSELF -->
+<section class="slide light">
+  <div class="eyebrow">TRY&nbsp;IT&nbsp;YOURSELF</div>
+  <h2>Be ahead of 70%<br>by Friday.</h2>
+  <div class="body">Audit <strong>one</strong> real website. Screenshot the tracker that fired pre-consent, the US IP, the Google Fonts call, the TLS grade. One page. One sentence of law per finding.</div>
+  <div class="body secondary">That single artifact beats six months of reading — because almost everyone studies these violations, and almost no one has actually produced the evidence.</div>
+  <div class="spacer"></div>
+  <div class="footer"><span class="name">Nidhi Kalyani</span><span class="pg">07</span></div>
+</section>
+
+<!-- 08 CTA / BIO -->
+<section class="slide dark">
+  <div class="eyebrow">IF&nbsp;YOU'RE&nbsp;HIRING&nbsp;IN&nbsp;THIS&nbsp;SPACE</div>
+  <h1>Nidhi Kalyani</h1>
+  <div class="body" style="margin-top:30px;color:var(--dark-muted);">Lawyer → data protection &amp; AI governance · Berlin</div>
+  <div class="body" style="margin-top:18px;">GDPR operations · EU AI Act readiness · ISO 27701 · CIPP/E &amp; AIGP in progress. I bridge the legal text and the Network tab.</div>
+  <span class="cta-btn">Open to roles &amp; collaborations ↗</span>
+  <div class="spacer"></div>
+  <div class="creditline">Technique credit: decareto's free data-protection guide (E. Schneider).</div>
+  <div class="footer" style="margin-top:20px;"><span class="name">nidhikalyani46287-lgtm.github.io/Portfolio</span><span class="pg">08</span></div>
+</section>
+
+</body>
+</html>
